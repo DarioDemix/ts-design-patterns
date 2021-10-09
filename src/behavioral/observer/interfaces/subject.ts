@@ -1,6 +1,7 @@
 import { Observer } from "./observer";
 
-export interface Subject {
-addObserver(observer: Observer): void;
-    removeObserver(observer: Observer): void;
+export interface Subject<T> {
+    addObserver(observer: Observer<T>): void;
+    removeObserver(observer: Observer<T>): void;
+    notifyObservers(value: T): void;
 }
